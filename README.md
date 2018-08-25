@@ -19,7 +19,7 @@ npm install truffle
 2: Clone the project directory
 
 ``` 
-clone https: 
+clone https://github.com/conwise18/Consensys-Final-Project.git
 cd FinalProject
 ```
 
