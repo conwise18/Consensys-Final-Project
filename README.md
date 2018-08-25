@@ -13,7 +13,7 @@ The solidity files in this project relate to that of a supply-chain or logistics
 1: Install Truffles and ganache 
 
 ```
-npm install truffle
+npm install -g truffle
 ```
 
 2: Clone the project directory
