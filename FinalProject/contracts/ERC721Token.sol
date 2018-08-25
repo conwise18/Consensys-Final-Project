@@ -38,7 +38,7 @@ contract ERC721Token is SupportsInterfaceWithLookup, ERC721BasicToken, ERC721 {
    * @dev Constructor function
    */
   constructor() public {
-    name_ = "ProgramToken";
+    name_ = "consenSysDevProgramToken";
     symbol_ = "CPT";
   }
 
