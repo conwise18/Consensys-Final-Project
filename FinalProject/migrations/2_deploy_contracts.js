@@ -14,11 +14,5 @@ const SupportsInterfaceWithLookup = artifacts.require('SupportsInterfaceWithLook
 
 
 module.exports = function(deployer) {
-	deployer.deploy(ERC721Holder);
-	deployer.deploy(SafeMath);
-	deployer.deploy(AddressUtils);
-    deployer.deploy(SupportsInterfaceWithLookup);
-    deployer.deploy(ERC721Token);
-    deployer.link(ERC721Holder, SafeMath, AddressUtils, SupportsInterfaceWithLookup, ERC721Token);
-	
+    deployer.deploy(PackageFactory);
 };
