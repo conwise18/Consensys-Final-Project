@@ -78,7 +78,7 @@ contract Company is SupplyAccessControl {
     // Using the above library for function calls
     using Member for Member.Data;
     
-    // Keywork "members" shall be called to access library data
+    // Keyword "members" shall be called to access library data
     Member.Data members;
     
     // Modifiers
