@@ -18,7 +18,7 @@ contract PackageFactory is Company, ERC721Token  {
 	address public owner;
 	uint public packageCount;
 	
-	// Numerical length of item id will be 10000000000000000000 
+	// Numerical length of an item id will be 10000000000000000000 
 	uint idLength = 10 ** 18;
 	
 	// Data storage
