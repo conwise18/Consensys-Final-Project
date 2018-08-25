@@ -14,7 +14,6 @@ The solidity files in this project relate to that of a supply-chain or logistics
 
 ```
 npm install truffle
-npm install ganache-cli 
 ```
 
 2: Clone the project directory
