@@ -1,4 +1,4 @@
-pragma solidity ^0.4.23;
+pragma solidity ^0.4.24;
 
 // ----------------------------------------------------------------------------
 // ConsenSys Academy’s 2018 Developer Program Final Project
