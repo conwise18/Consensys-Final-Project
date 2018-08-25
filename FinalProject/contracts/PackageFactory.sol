@@ -69,7 +69,7 @@ contract PackageFactory is Company, ERC721Token  {
     function getPackage(uint _packageNum, address _companyAddress) public constant returns(uint id, uint date, string name, string location, string contents) {
         return (packageOwner[_packageNum][_companyAddress].id,
                 packageOwner[_packageNum][_companyAddress].date,
-        	    packageOwner[_packageNum][_companyAddress].name, 
+        	packageOwner[_packageNum][_companyAddress].name, 
                 packageOwner[_packageNum][_companyAddress].location, 
                 packageOwner[_packageNum][_companyAddress].contents);
     }
