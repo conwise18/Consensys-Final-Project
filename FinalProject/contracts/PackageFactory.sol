@@ -57,9 +57,9 @@ contract PackageFactory is Company, ERC721Token  {
 
     function signPackage (uint _id, uint _tokenId, address _signer) public onlyCompany() returns (uint) {
 	    uint256 newId = uint(keccak256(abi.encodePacked(_id, _tokenId, _signer)));
-	    packageOwner[_id][msg.sender].id = newId;
+	    packageOwner[_id][msg.sender].id = newId % idLength;
 	    emit packageSigned(_id, newId, _tokenId, _signer);
-	    return packageOwner[newId][msg.sender].id % idLength;
+	    return packageOwner[newId][msg.sender].id;
 	}
 	
     function getPackages() public constant returns (uint) {
