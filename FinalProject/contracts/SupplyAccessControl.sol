@@ -61,13 +61,13 @@ contract SupplyAccessControl {
     }
     
     // Function add new COO
-    function addCOO(address _newCOO) public {
+    function addCOO(address _newCOO) public onlyCLevel {
         require (_newCOO != address(0));
         COO = _newCOO;
     }
     
     // Function add new CFO
-    function addCFO(address _newCFO) public {
+    function addCFO(address _newCFO) public onlyCLevel {
         require (_newCFO != address(0));
         CFO = _newCFO;
     }
