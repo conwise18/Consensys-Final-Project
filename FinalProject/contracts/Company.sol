@@ -1,7 +1,19 @@
 pragma solidity ^0.4.19;
 
+// ----------------------------------------------------------------------------
+// ConsenSys Academy’s 2018 Developer Program Final Project
+//
+// https://github.com/conwise18/Consensys-Final-Project
+//
+// BokkyPooBah / Bok Consulting Pty Ltd / The MIT Licence.
+// 
+// Enjoy! (c) Connor Wiseman 
+// ----------------------------------------------------------------------------
+
+// Library declaration
 library Member {
     
+    // Data storage
     struct Members {
         bool exists;
         uint index;
@@ -25,17 +37,21 @@ library Member {
         address[] company;
     }
     
+    // Events
     event MemberAdded(address indexed memberAddress, string name, uint totalAfter);
     event CompanyAdded(address indexed settlerAddress, string name, uint totalAfter);
     
+    // Function checks membership of a given address
     function isMember(Data storage self, address memberAddress) internal view returns (bool) {
         return self.entries[memberAddress].exists;
     }
     
+    // Function checks if a company address is active
     function isCompany(Data storage self, address _companyAddress) internal view returns (bool) {
         return self.companies[_companyAddress].active;
     }
     
+    // Function create a new member 
     function add(Data storage self, address memberAddress, string memberName) internal {
         require(!self.entries[memberAddress].exists);
         self.members.push(memberAddress);
@@ -43,6 +59,7 @@ library Member {
         emit MemberAdded(memberAddress, memberName, self.members.length);
     }
     
+    // Function creates a new company 
     function Company(Data storage self, address _companyAddress, string _companyName, string _companyResidence, string _industry) internal {
         require (!self.entries[_companyAddress].exists);
         self.company.push(_companyAddress);
@@ -52,14 +69,19 @@ library Member {
     
 }
 
+// Import statement for contract beneath 
 import "./SupplyAccessControl.sol";
 
+// Contract declaration
 contract Company is SupplyAccessControl {
     
+    // Using the above library for function calls
     using Member for Member.Data;
     
+    // Keywork "members" shall be called to access library data
     Member.Data members;
     
+    // Modifiers
     modifier onlyMember {
         require(members.isMember(msg.sender));
         _;
@@ -70,10 +92,14 @@ contract Company is SupplyAccessControl {
         _;
     }
     
+    // Function adds new member 
+    // Dev - library function "add" is run when function is called
     function addMember(address _memberAddress, string _memberName) public {
         members.add(_memberAddress, _memberName);
     }
     
+    // Function adds new company
+    // Dev - library function "Company" is run when function is called
     function addCompany(address _companyAddress, string _settlerName, string _companyResidence, string _industry) public onlyCLevel() {
         members.Company(_companyAddress, _settlerName, _companyResidence, _industry);
     }
