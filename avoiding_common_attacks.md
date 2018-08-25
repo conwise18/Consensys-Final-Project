@@ -15,7 +15,7 @@ The smart contracts in FinalProject have been protected from bugs and attack vec
  
  * Using internal/private functions where possible to keep function bodys simple and small, trying to keep code logic reuseable.
  
- *PLEASE NOTE: for test purposes "mint" and "burn" functions are public. 
+ *PLEASE NOTE: for test purposes "mint" and "burn" functions are public not internal. 
  
  
  
