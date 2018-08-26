@@ -10,7 +10,7 @@ The solidity files in this project relate to that of a supply-chain or logistics
 
 ### Initilization
 
-1: Install Truffles and ganache 
+1: Install Truffles 
 
 ```
 npm install -g truffle
