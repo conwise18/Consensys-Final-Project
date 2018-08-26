@@ -5,7 +5,7 @@ This is my final project for the consensys developer program 2018. The initiativ
 
  ## What is the project ?
 
-The solidity files in this project relate to that of a supply-chain or logistics company whereby each package or item being processed by the application will have its own unique token. Each entity looking to use the application can create an account, add members(fellow workers) to the account. Once an account is created the user can then create the packages and sign them at intervals throughout its phases of distrubution. 
+The solidity files in this project relate to that of a supply-chain or logistics company whereby each package or item being processed by the application will have its own unique token. Each entity looking to use the application can create an account, add members (fellow workers) to the account. Once an account is created the user can then create the packages and sign them at intervals throughout its phases of distrubution. 
 
 
 ### Initilization
