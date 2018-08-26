@@ -16,5 +16,5 @@ These 3 contracts will allow you to
 * allow entitys or organizations to register with the decentalized application
 * add fellow members of an organization to the register
 * create packages on the blockchain that can be exchanged with others 
-* sign the package or item at a interval of manufacturing, distribution or shelving 
+* sign the package or item at an interval of manufacturing, distribution or shelving 
         
