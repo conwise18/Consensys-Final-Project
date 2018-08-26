@@ -6,7 +6,7 @@ The application logic was built up from the items being made unique with the fir
 
 The project code also includes a smart contract called "SupplyAccessControl" this smart contracts operates as a governance contract for any company that wishes to use this code. The contract allows for Ethereum addresses to be linked against a specific role such as C00, CF0 etc, these addresses can also be changed. 
 
-Events are also used throughout the landscape of the smart contracts, events are being called whenever a importance peice of data is being changed on the blockchain. And when new data is being added to the contract, using events helps the system design of the application due to the timestamping on the blockchain being easily auditable and can improve workflow within a business. 
+Events are also used throughout the landscape of the smart contracts, events are being called whenever a important peice of data is being changed on the blockchain. And when new data is being added to the contract, using events helps the system design of the application due to the timestamping on the blockchain being easily auditable and can improve workflow within a business. 
 
 • Most of the logic being used in the application will come from a set of 3 main smart contracts that are ERC721Token.sol, Company.sol and PackageFactory.sol 
 
