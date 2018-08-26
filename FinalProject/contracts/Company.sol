@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.4.19;
 
 // ----------------------------------------------------------------------------
 // ConsenSys Academy’s 2018 Developer Program Final Project
@@ -6,6 +6,7 @@ pragma solidity ^0.4.24;
 // https://github.com/conwise18/Consensys-Final-Project
 //
 // BokkyPooBah / Bok Consulting Pty Ltd / The MIT Licence.
+// GitHub: https://github.com/bokkypoobah/ClubEth
 // 
 // Enjoy! (c) Connor Wiseman 
 // ----------------------------------------------------------------------------
@@ -32,9 +33,9 @@ library Member {
     struct Data {
         bool initialised;
         mapping (address => Members) entries;
-        mapping (address => Account) companies;
+        mapping (address => Account) companyAccounts;
         address[] members;
-        address[] company;
+        address[] companies;
     }
     
     // Events
@@ -48,7 +49,7 @@ library Member {
     
     // Function checks if a company address is active
     function isCompany(Data storage self, address _companyAddress) internal view returns (bool) {
-        return self.companies[_companyAddress].active;
+        return self.companyAccounts[_companyAddress].active;
     }
     
     // Function create a new member 
@@ -60,11 +61,11 @@ library Member {
     }
     
     // Function creates a new company 
-    function Company(Data storage self, address _companyAddress, string _companyName, string _companyResidence, string _industry) internal {
+    function company(Data storage self, address _companyAddress, string _companyName, string _companyResidence, string _industry) internal {
         require (!self.entries[_companyAddress].exists);
-        self.company.push(_companyAddress);
-        self.companies[_companyAddress] = Account(_companyAddress, self.company.length - 1, _companyName, _companyResidence, _industry, true);
-        emit CompanyAdded(_companyAddress, _companyName, self.company.length);
+        self.companies.push(_companyAddress);
+        self.companyAccounts[_companyAddress] = Account(_companyAddress, self.companies.length - 1, _companyName, _companyResidence, _industry, true);
+        emit CompanyAdded(_companyAddress, _companyName, self.companies.length);
     }
     
 }
@@ -78,7 +79,7 @@ contract Company is SupplyAccessControl {
     // Using the above library for function calls
     using Member for Member.Data;
     
-    // Keyword "members" shall be called to access library data
+    // Keywork "members" shall be called to access library data
     Member.Data members;
     
     // Modifiers
@@ -99,8 +100,8 @@ contract Company is SupplyAccessControl {
     }
     
     // Function adds new company
-    // Dev - library function "Company" is run when function is called
+    // Dev - library function "company" is run when function is called
     function addCompany(address _companyAddress, string _settlerName, string _companyResidence, string _industry) public onlyCLevel() {
-        members.Company(_companyAddress, _settlerName, _companyResidence, _industry);
+        members.company(_companyAddress, _settlerName, _companyResidence, _industry);
     }
 }
