@@ -8,7 +8,7 @@ pragma solidity ^0.4.24;
 // BokkyPooBah / Bok Consulting Pty Ltd / The MIT Licence.
 // GitHub: https://github.com/bokkypoobah/ClubEth
 // 
-// Enjoy! (c) Connor Wiseman 
+// Enjoy! (c) Connor Wiseman / The MIT Licence.
 // ----------------------------------------------------------------------------
 
 // Library declaration
